@@ -1,0 +1,46 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+p{
+    font-size:x-large;
+    font-weight: bolder;
+    color: #005582;
+}
+
+.content{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#image_content{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    width: 250px;
+    margin-right: 2em;
+}
+
+input,label{
+    color: #005582;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+}
+
+#upload{
+    cursor: pointer;
+    width: 220px;
+    height: 30px;
+    border-style: #005582;
+    border-radius: 0.5em;
+    background-color: #005582;
+    color: cyan;
+}

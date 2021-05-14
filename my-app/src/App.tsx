@@ -4,15 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/home';
 import Navbar from './components/Navbar/navbar';
-import Admin from './components/pages/admin';
+import Register from './components/pages/register';
 import Create from './components/pages/create';
-import Deleate from './components/pages/deleat';
+import Upload from './components/pages/upload';
 import Login from './components/pages/login';
-import Logout from './components/pages/logout';
-
-
-
-
+import Logout from './components/pages/logout'
 
 function App() {
   return (
@@ -23,11 +19,12 @@ function App() {
         </div>
         <div className='container'>
           <Switch>
-            <Route path='/'component={Home} />
-            <Route path='/Admin' exact component={Admin} />
-            <Route path='/Create' component={Create} />
-            <Route path='/Deleate' component={Deleate} />
-            <Route path='/Login' component={Login} />
+            <Route path='/'exact component={Home} />
+            <Route path='/register' component={Register} />
+            <Route path='/create' component={Create} />
+            <Route path='/upload' component={Upload} />
+            <Route path='/login' component={Login} />
+            <Route path='/logout' component={Logout} />
           </Switch>
         </div>
       </Router>
