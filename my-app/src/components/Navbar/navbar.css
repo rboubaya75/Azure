@@ -1,3 +1,4 @@
+
 .navbar {
     background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
     height: 80px;
@@ -17,6 +18,27 @@
     height: 80px;
     max-width: 3000px;
   }
+
+  
+@keyframes degrade{
+  0% {
+      background: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,1) , rgba(0,0,0,1) );
+}
+  25%{background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(73,66,23,1) 75%, rgba(255,220,0,1) 100%);
+  }
+50% {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(32,30,16,1) 50%, rgba(255,220,0,1) 100%);
+}
+  75%{
+      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(18,17,12,1) 30%, rgba(255,220,0,1) 100%);
+  }
+  100%{
+      color: black;
+      font-size: 34px;
+      font-weight: 700;
+      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(18,17,12,1) 0%, rgba(255,220,0,1) 50%);
+  }
+}
   
   .navbar-logo {
     color: #fff;
@@ -46,9 +68,16 @@
   }
   
   .nav-item {
-    height: 80px;
+    height: 50px;
+    
+  }
+  .nav-item:hover {
+    color:white;
+    animation: degrade 0.8s ease forwards;
   }
   
+
+
   .nav-links {
     color: #fff;
     display: flex;
@@ -154,5 +183,8 @@
       background: #fff;
       color: #242424;
       transition: 250ms;
+      animation: degrade 0.8s ease forwards;
     }
+   
   }
+  

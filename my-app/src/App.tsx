@@ -5,7 +5,7 @@ import './App.css';
 import Home from './components/pages/home';
 import Navbar from './components/Navbar/navbar';
 import Register from './components/pages/register';
-import Create from './components/pages/create';
+import MemeGenerator  from './components/pages/create';
 import Upload from './components/pages/upload';
 import Login from './components/pages/login';
 import Logout from './components/pages/logout'
@@ -21,7 +21,7 @@ function App() {
           <Switch>
             <Route path='/'exact component={Home} />
             <Route path='/register' component={Register} />
-            <Route path='/create' component={Create} />
+            <Route path='/create' component={MemeGenerator } />
             <Route path='/upload' component={Upload} />
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Logout} />

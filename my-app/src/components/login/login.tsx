@@ -1,17 +1,48 @@
-/*
-
+import React, {SyntheticEvent, useState } from 'react';
 import './login.css'
+import axios, { AxiosResponse } from "axios"
 
-export default function UserLogin() {
+
+const url = "http://localhost:4000/login"
+type Props ={
+  setToken?: any
+}
+
+export default function UserLogin(props: any) {
+
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+async function login() {
+  let data = await axios.post(url, {
+    headers:{'Content-Type' : 'application/json'},
+    credentials: {
+      username,
+      password
+    }
+  }).then(res =>  res)
+  return data
+}
+
+async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault();
+  const loginData =  await login()
+
+  // Login was succesfull 
+
+  props.setToken? props.setToken(loginData.data):  console.log(loginData.data)
+}
+
+
     return (
         <div className="content-main">
             <div className="content-login">
-                <form action="http://localhost:4000/login" method="post">
+                <form  className="form" onSubmit={handleSubmit}>
                     <div>
-                        <input className="field-login" type="text" name="username" placeholder="Enter your user name" required/>
+                        <input className="field-login" type="text" name="username" placeholder="Enter your user name" onChange={e => setUsername(e.target.value)}/>
                     </div>
                     <div>
-                        <input className="field-login" type="password" name="password" placeholder="Enter your password" required/>
+                        <input className="field-login" type="password" name="password" placeholder="Enter your password"onChange={e => setPassword(e.target.value)}/>
                     </div>
                     <div>
                         <input className="btn-login" type="submit" value="Login"/>
@@ -22,7 +53,7 @@ export default function UserLogin() {
     );
 }
 
-*/
+/*
 
 import React, { useReducer, useEffect } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
@@ -221,3 +252,5 @@ const  UserLogin = () => {
 }
 
 export default UserLogin;
+
+*/
